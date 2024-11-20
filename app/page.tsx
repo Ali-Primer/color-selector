@@ -5,11 +5,15 @@ import { HeaderPages } from "./components/HeaderPages";
 import "./globals.css";
 
 export default function Home() {
-  const [color, setColor] = useState<string>()
+  const [color, setColor] = useState<string>("blue")
+
+  function selectColorHandler(color: string){
+    setColor(color)
+  }
   return (
     <>
-      <HeaderPages color={color}/>
-      <ColorsBox setColor={setColor}/>
+      <HeaderPages SelectedColor={color}/>
+      <ColorsBox setColor={selectColorHandler}/>
     </>
   );
 }

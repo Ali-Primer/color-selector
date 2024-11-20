@@ -1,7 +1,11 @@
+import { HeaderPages } from "@/app/components/HeaderPages";
+
 export default function secondPage(){
+    
+
     return(
         <>
-            hhhhhhhhh
+            <HeaderPages SelectedColor={undefined}/>
         </>
     )
 }
