@@ -9,11 +9,7 @@ const menu: React.CSSProperties = {
   justifyContent: "center",
 };
 
-interface HeaderPages {
-  SelectedColor: string | undefined;
-}
-
-export const HeaderPages = ({ SelectedColor }: HeaderPages) => {
+export const HeaderPages = () => {
   const [color, setColor] = useState<string | null>("blue");
   const router = useRouter();
 
@@ -23,8 +19,8 @@ export const HeaderPages = ({ SelectedColor }: HeaderPages) => {
 
   useEffect(() => {
     const color: string | null = localStorage.getItem("color");
-    setColor(color);
-  }, [SelectedColor]);
+    setColor(color === null ? "blue" : color);
+  }, []);
 
   return (
     <Menu

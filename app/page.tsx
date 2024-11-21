@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import { ColorsBox } from "./components/ColorsBox";
-import { HeaderPages } from "./components/HeaderPages";
 import "./globals.css";
 
 export default function Home() {
@@ -12,7 +11,6 @@ export default function Home() {
   }
   return (
     <>
-      <HeaderPages SelectedColor={color}/>
       <ColorsBox setColor={selectColorHandler}/>
     </>
   );
