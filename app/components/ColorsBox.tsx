@@ -2,14 +2,9 @@ import { Button, Flex, Space } from "antd";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-interface colorsBox {
-  setColor: (color: string) => void;
-}
-
-export function ColorsBox({ setColor }: colorsBox) {
+export function ColorsBox() {
   function setToStorage(selectedColor: string) {
     localStorage.setItem("color", selectedColor);
-    setColor(selectedColor);
   }
 
   return (
