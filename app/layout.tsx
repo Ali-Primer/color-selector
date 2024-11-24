@@ -3,10 +3,10 @@ import localFont from "next/font/local";
 import "./globals.css";
 
 const Tanha = localFont({
-  src: [
-    { path: "./fonts/Tanha.woff", weight: "400" },
-    { path: "./fonts/Tanha.woff2", weight: "700" },
-  ],
+  src: "./fonts/Tanha.woff",
+});
+const Tanha2 = localFont({
+  src: "./fonts/Tanha.woff2",
 });
 
 export const metadata: Metadata = {
@@ -21,9 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa">
-      <body className={Tanha.className}>
-        {children}
-      </body>
+      <body className={`${Tanha.className} ${Tanha2.className}`}>{children}</body>
     </html>
   );
 }
