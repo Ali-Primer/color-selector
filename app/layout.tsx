@@ -8,6 +8,12 @@ const Tanha = localFont({
 const Tanha2 = localFont({
   src: "./fonts/Tanha.woff2",
 });
+const TanhaDigit = localFont({
+  src: "./fonts/Tanha-FD.woff",
+});
+const TanhaDigit2 = localFont({
+  src: "./fonts/Tanha-FD.woff2",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,7 +27,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa">
-      <body style={{direction: "rtl"}} className={`${Tanha.className} ${Tanha2.className}`}>{children}</body>
+      <body
+        style={{ direction: "rtl" }}
+        className={`${Tanha.className} ${Tanha2.className} ${TanhaDigit.className} ${TanhaDigit2.className}`}
+      >
+        {children}
+      </body>
     </html>
   );
 }
