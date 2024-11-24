@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa">
-      <body className={`${Tanha.className} ${Tanha2.className}`}>{children}</body>
+      <body style={{direction: "rtl"}} className={`${Tanha.className} ${Tanha2.className}`}>{children}</body>
     </html>
   );
 }
