@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export function HeaderDesktop() {
   return (
@@ -34,7 +35,9 @@ export function HeaderDesktop() {
                 </svg>
                 فیلم معرفی
               </div>
-              <div>محصولات و خدمات</div>
+              <div>
+                <Link href="/products">محصولات و خدمات</Link>
+              </div>
               <div>تماس با ما</div>
             </div>
           </div>
