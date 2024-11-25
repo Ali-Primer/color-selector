@@ -1,7 +1,7 @@
 export function FooterDesktop() {
   return (
     <>
-      <div className="hidden bg-gradient-to-l from-[#364099] to-[#40499A] h-64 w-full absolute bottom-0 lg:flex justify-center">
+      <div className="hidden bg-gradient-to-l from-[#364099] to-[#40499A] h-64 w-full bottom-0 lg:flex justify-center">
         <div className="w-4/5 h-full text-white divide-y-2 divide-gray-400">
           <div className="flex mt-5 pb-5">
             {/* lorem ipsum */}
