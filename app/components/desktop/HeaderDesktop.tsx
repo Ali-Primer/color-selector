@@ -37,7 +37,7 @@ export function HeaderDesktop() {
           </div>
 
           {/* left header */}
-          <div className="flex items-center justify-between w-7/12 text-gray-600">
+          <div className="flex items-center justify-between w-7/12 max-w-[477.86px] text-gray-600">
             <button
               className="flex gap-x-1 text-sm border-gray-400 border py-1 px-3"
               style={{ boxShadow: "3px 3px 0px 0px rgba(213,213,233,1)" }}
