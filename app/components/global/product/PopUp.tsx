@@ -1,7 +1,10 @@
 "use client";
 
+import { useSelector } from "react-redux";
 import { SelectButton } from "../../SelectButton";
 import { Seller } from "./Seller";
+import { RootState } from "@/app/store/store";
+import { useEffect, useState } from "react";
 
 interface Sellers {
   id: number;
@@ -11,7 +14,39 @@ interface Sellers {
   price: number;
 }
 
+interface ProductType {
+  id: number;
+  name: string;
+  img: string;
+  price: number;
+}
+
 export function PopUp() {
+  const selected = useSelector((state: RootState) => state.ID.id);
+  const isOpen = useSelector((state :RootState) => state.ID.open)
+  const [selectedProduct, setSelectedProduct] = useState<ProductType | null>()
+
+
+  async function fetchProduct() {
+    try {
+      const res = await fetch("/data/products.json")
+      if (!res.ok) {
+        throw new Error("failed to fetch single product")
+      }
+      const data:ProductType[] = await res.json()
+      const selectedID = data.find((item) => item.id === selected)
+      if (selectedID !== null || undefined) {
+        setSelectedProduct(selectedID)
+      }
+    } catch (error) {
+      
+    }
+  }
+
+  useEffect(() => {
+    fetchProduct()
+  },[selected])
+  
   const sellers: Sellers[] = [
     { id: 0, name: "فروشگاه هشمت", distance: 2, result: 5, price: 20000 },
     { id: 1, name: "فروشگاه نصرت", distance: 2, result: 3, price: 15000 },
@@ -20,7 +55,7 @@ export function PopUp() {
 
   return (
     <>
-      <div className="w-11/12 absolute h-[620px] bg-white top-20 mx-14 border-2 border-gray-700">
+      <div className={`w-11/12 absolute h-[620px] bg-white top-20 mx-14 border-2 border-gray-700 ${isOpen ? "block" : "hidden"}`}>
         <div className="p-5">
           <div className="flex gap-2">
             <svg
@@ -42,7 +77,7 @@ export function PopUp() {
 
           <div className="flex mt-5 w-full justify-between">
             <div className="flex flex-col gap-4">
-              <p className="text-lg font-bold">مایع دستشویی گلرنگ</p>
+              <p className="text-lg font-bold">{selectedProduct?.name}</p>
               <p className="text-blue-400">مشاهده کالاگرام</p>
             </div>
             <div>

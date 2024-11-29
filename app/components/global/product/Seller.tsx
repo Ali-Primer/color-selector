@@ -43,7 +43,7 @@ export function Seller({ seller }: seller) {
             </p>
           </div>
           <p>
-            قیمت فروش واحد <span>{seller.price.toLocaleString()} تومان</span>
+            قیمت فروش واحد <span className="font-bold">{seller.price.toLocaleString()}</span> تومان
           </p>
         </div>
 

@@ -1,3 +1,7 @@
+import { openPopUp, selectID } from "@/app/store/selectedID-slice";
+import { AppDispatch } from "@/app/store/store";
+import { useDispatch } from "react-redux";
+
 interface singleProduct {
   id: number;
   name: string;
@@ -10,6 +14,12 @@ interface product {
 }
 
 export function Product({ product }: product) {
+  const dispatch = useDispatch<AppDispatch>();
+
+  const handleSelectProduct = () => {
+    dispatch(selectID(product.id)); // ارسال id به Redux
+    dispatch(openPopUp())
+  };
   return (
     <div>
       <div className="flex flex-col items-center justify-center border shadow-md">
@@ -56,6 +66,7 @@ export function Product({ product }: product) {
         </div>
 
         <button
+          onClick={handleSelectProduct}
           style={{
             boxShadow: "3px 3px 0px 0px rgba(0,0,0,1)",
           }}

@@ -1,8 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { selectedID } from "./selectedID-slice";
+import selectedIDReducer from "./selectedID-slice";
 
-configureStore({
-    reducer:{
-        ID: selectedID.reducer
-    }
-})
+export const store = configureStore({
+  reducer: {
+    ID: selectedIDReducer, // استفاده از ریدوسر
+  },
+});
+
+// تعریف نوع RootState و AppDispatch برای استفاده در کامپوننت‌ها
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
