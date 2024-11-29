@@ -54,14 +54,14 @@ export function Product({ product }: product) {
           <img src={product.img} alt={product.name} />
         </div>
         <div className="flex w-11/12 justify-center mt-3 mb-3">
-          <p className="text-nowrap text-center">{product.name}</p>
+          <p className="text-nowrap text-center text-sm">{product.name}</p>
         </div>
 
         <button
           style={{
             boxShadow: "3px 3px 0px 0px rgba(0,0,0,1)",
           }}
-          className="bg-green-700 text-white px-7 py-2 my-5"
+          className="bg-green-700 text-white px-7 py-2 my-5 text-sm"
         >
           موزعین این محصول
         </button>
