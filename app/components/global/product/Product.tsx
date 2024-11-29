@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 interface singleProduct {
   id: number;
   name: string;
