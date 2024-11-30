@@ -55,7 +55,7 @@ export function PopUp() {
 
   return (
     <>
-      <div className={`w-11/12 absolute h-[620px] bg-white top-20 mx-14 border-2 border-gray-700 ${isOpen ? "block" : "hidden"}`}>
+      <div className={`z-20 w-11/12 absolute h-[620px] bg-white top-20 mx-14 border-2 border-gray-700 ${isOpen ? "block" : "hidden"}`}>
         <div className="p-5">
           <div className="flex gap-2">
             <svg

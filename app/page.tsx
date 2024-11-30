@@ -1,17 +1,15 @@
 "use client";
-import { FooterDesktop } from "./components/desktop/FooterDesktop";
-import { HeaderDesktop } from "./components/desktop/HeaderDesktop";
-import { Header } from "./components/global/Header";
-import { Main } from "./components/Home/Main";
+import { Provider, useSelector } from "react-redux";
 import "./globals.css";
+import { store } from "./store/store";
+import { MainMother } from "./components/Home/MainMother";
 
 export default function Home() {
   return (
     <>
-      <HeaderDesktop/>
-      <Header/>
-      <Main/>
-      <FooterDesktop/>
+      <Provider store={store}>
+        <MainMother />
+      </Provider>
     </>
   );
 }
