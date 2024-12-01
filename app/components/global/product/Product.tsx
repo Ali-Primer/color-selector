@@ -1,5 +1,6 @@
 import { openPopUp, selectID } from "@/app/store/selectedID-slice";
 import { AppDispatch } from "@/app/store/store";
+import Link from "next/link";
 import { useDispatch } from "react-redux";
 
 interface singleProduct {
@@ -18,7 +19,7 @@ export function Product({ product }: product) {
 
   const handleSelectProduct = () => {
     dispatch(selectID(product.id)); // ارسال id به Redux
-    dispatch(openPopUp())
+    dispatch(openPopUp());
   };
   return (
     <div>
@@ -26,20 +27,22 @@ export function Product({ product }: product) {
         <div className="w-full bg-white h-10 flex flex-row-reverse items-center">
           <div className="flex gap-2 items-center pl-3">
             {/* info icon */}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="size-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
-              />
-            </svg>
+            <Link href={`./${product.id}`}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="size-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+                />
+              </svg>
+            </Link>
 
             {/* save icon */}
             <svg
